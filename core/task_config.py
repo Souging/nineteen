@@ -251,7 +251,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
                     "tokenizer": "casperhansen/deepseek-r1-distill-qwen-32b-awq",
                     "max_model_len": 16_000,
                     "gpu_memory_utilization": 0.57,
-                    "eos_token_id": 151647
+                    "eos_token_id": 151643
                 },
                 endpoint=cmodels.Endpoints.chat_completions.value,
                 checking_function="check_text_result",
@@ -285,7 +285,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
                     "tokenizer": "casperhansen/deepseek-r1-distill-qwen-32b-awq",
                     "max_model_len": 16_000,
                     "gpu_memory_utilization": 0.57,
-                    "eos_token_id": 151647
+                    "eos_token_id": 151643
                 },
                 endpoint=cmodels.Endpoints.completions.value,
                 checking_function="check_text_result",
