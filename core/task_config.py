@@ -57,7 +57,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
                 func="generate_chat_synthetic", kwargs={"model": CHAT_LLAMA_3_2_3B}
             ),
             endpoint=cmodels.Endpoints.chat_completions.value,
-            volume_to_requests_conversion=300,
+            volume_to_requests_conversion=250,
             is_stream=True,
             weight=0.025,
             timeout=2,
@@ -91,7 +91,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
                 func="generate_chat_comp_synthetic", kwargs={"model": CHAT_LLAMA_3_2_3B_COMP}
             ),
             endpoint=cmodels.Endpoints.completions.value,
-            volume_to_requests_conversion=300,
+            volume_to_requests_conversion=250,
             is_stream=True,
             weight=0.025,
             timeout=2,
@@ -125,7 +125,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
                 func="generate_chat_synthetic", kwargs={"model": CHAT_LLAMA_3_1_70B}
             ),
             endpoint=cmodels.Endpoints.chat_completions.value,
-            volume_to_requests_conversion=300,
+            volume_to_requests_conversion=400,
             is_stream=True,
             weight=0.075,
             timeout=2,
@@ -159,7 +159,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
                 func="generate_chat_comp_synthetic", kwargs={"model": CHAT_LLAMA_3_1_70B_COMP}
             ),
             endpoint=cmodels.Endpoints.completions.value,
-            volume_to_requests_conversion=300,
+            volume_to_requests_conversion=400,
             is_stream=True,
             weight=0.075,
             timeout=2,
@@ -327,7 +327,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             ),
             synthetic_generation_config=cmodels.SyntheticGenerationConfig(func="generate_chat_comp_synthetic", kwargs={"model": CHAT_ROGUE_ROSE_103B_COMP}),
             endpoint=cmodels.Endpoints.completions.value,
-            volume_to_requests_conversion=300,
+            volume_to_requests_conversion=600,
             is_stream=True,
             weight=0.075,
             timeout=2,
