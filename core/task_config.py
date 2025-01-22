@@ -261,7 +261,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
                 func="generate_chat_synthetic", kwargs={"model": CHAT_DEEPSEEK_R1_QWEN_32B}
             ),
             endpoint=cmodels.Endpoints.chat_completions.value,
-            volume_to_requests_conversion=300,
+            volume_to_requests_conversion=500,
             is_stream=True,
             weight=0.075,
             timeout=2,
@@ -295,7 +295,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
                 func="generate_chat_comp_synthetic", kwargs={"model": CHAT_DEEPSEEK_R1_QWEN_32B_COMP}
             ),
             endpoint=cmodels.Endpoints.completions.value,
-            volume_to_requests_conversion=300,
+            volume_to_requests_conversion=500,
             is_stream=True,
             weight=0.075,
             timeout=2,
