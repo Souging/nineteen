@@ -186,7 +186,7 @@ async def _process_quality_scores(
 
     average_weighted_quality_scores = {}
     for node_hotkey, scores in quality_scores.items():
-        hotkey_average_quality_score = sum(score for score in scores) / len(scores)
+        hotkey_average_quality_score = max(sum(score for score in scores) / len(scores), 0)
         if hotkey_average_quality_score <= 0.9 and task != 'avatar' :
             hotkey_average_quality_score = hotkey_average_quality_score ** 2
         # if hotkey_average_quality_score <= 0.8:
