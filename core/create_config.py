@@ -74,22 +74,22 @@ def generate_miner_config(dev: bool = False) -> dict[str, Any]:
     if subtensor_address:
         config["SUBTENSOR_ADDRESS"] = subtensor_address
 
-    default_stake_threshold = "0" if config["SUBTENSOR_NETWORK"] == "test" else "1000"
+    default_stake_threshold = "0" if config["SUBTENSOR_NETWORK"] == "test" else "500000"
     config["NETUID"] = 176 if config["SUBTENSOR_NETWORK"] == "test" else 19
     config["ENV"] = "dev" if dev else "prod"
     config["IS_VALIDATOR"] = "False"
     config["NODE_PORT"] = input("Enter the port to run the miner server on (default: 4001): ") or "4001"
     config["IMAGE_WORKER_URL"] = input("Enter IMAGE_WORKER_URL: ")
-    config["LLAMA_3_1_8B_TEXT_WORKER_URL"] = input("Enter LLAMA_3_1_8B_TEXT_WORKER_URL: ")
-    config["LLAMA_3_1_8B_TEXT_COMP_WORKER_URL"] = input("Enter LLAMA_3_1_8B_TEXT_COMP_WORKER_URL: ")
-    config["LLAMA_3_2_3B_TEXT_WORKER_URL"] = input("Enter LLAMA_3_2_3B_TEXT_WORKER_URL: ")
-    config["LLAMA_3_2_3B_TEXT_COMP_WORKER_URL"] = input("Enter LLAMA_3_2_3B_TEXT_COMP_WORKER_URL: ")
-    config["LLAMA_3_1_70B_TEXT_WORKER_URL"] = input("Enter LLAMA_3_1_70B_TEXT_WORKER_URL: ")
-    config["LLAMA_3_1_70B_TEXT_COMP_WORKER_URL"] = input("Enter LLAMA_3_1_70B_TEXT_COMP_WORKER_URL: ")
-    config["DEEPSEEK_R1_QWEN_32B_TEXT_WORKER_URL"] = input("Enter DEEPSEEK_R1_QWEN_32B_TEXT_WORKER_URL: ")
-    config["DEEPSEEK_R1_QWEN_32B_TEXT_COMP_WORKER_URL"] = input("Enter DEEPSEEK_R1_QWEN_32B_TEXT_COMP_WORKER_URL: ")
-    config["CHAT_ROGUE_ROSE_103B_COMP_WORKER_URL"] = input("Enter CHAT_ROGUE_ROSE_103B_COMP_WORKER_URL: ")
-    config["MIN_STAKE_THRESHOLD"] = input("Enter MIN_STAKE_THRESHOLD (default: 1000): ") or default_stake_threshold
+    config["LLAMA_3_1_8B_TEXT_WORKER_URL"] = input("Enter LLAMA_3_1_8B_TEXT_WORKER_URL(default: https://api.nineteen.ai/v1): ") or "https://api.nineteen.ai/v1"
+    config["LLAMA_3_1_8B_TEXT_COMP_WORKER_URL"] = input("Enter LLAMA_3_1_8B_TEXT_COMP_WORKER_URL(default: https://api.nineteen.ai/v1): ")or "https://api.nineteen.ai/v1"
+    config["LLAMA_3_2_3B_TEXT_WORKER_URL"] = input("Enter LLAMA_3_2_3B_TEXT_WORKER_URL(default: https://api.nineteen.ai/v1): ")or "https://api.nineteen.ai/v1"
+    config["LLAMA_3_2_3B_TEXT_COMP_WORKER_URL"] = input("Enter LLAMA_3_2_3B_TEXT_COMP_WORKER_URL(default: https://api.nineteen.ai/v1): ")or "https://api.nineteen.ai/v1"
+    config["LLAMA_3_1_70B_TEXT_WORKER_URL"] = input("Enter LLAMA_3_1_70B_TEXT_WORKER_URL(default: https://api.nineteen.ai/v1): ")or "https://api.nineteen.ai/v1"
+    config["LLAMA_3_1_70B_TEXT_COMP_WORKER_URL"] = input("Enter LLAMA_3_1_70B_TEXT_COMP_WORKER_URL(default: https://api.nineteen.ai/v1): ")or "https://api.nineteen.ai/v1"
+    config["DEEPSEEK_R1_QWEN_32B_TEXT_WORKER_URL"] = input("Enter DEEPSEEK_R1_QWEN_32B_TEXT_WORKER_URL(default: https://api.nineteen.ai/v1): ")or "https://api.nineteen.ai/v1"
+    config["DEEPSEEK_R1_QWEN_32B_TEXT_COMP_WORKER_URL"] = input("Enter DEEPSEEK_R1_QWEN_32B_TEXT_COMP_WORKER_URL(default: https://api.nineteen.ai/v1): ")or "https://api.nineteen.ai/v1"
+    config["CHAT_ROGUE_ROSE_103B_COMP_WORKER_URL"] = input("Enter CHAT_ROGUE_ROSE_103B_COMP_WORKER_URL(default: https://api.nineteen.ai/v1): ")or "https://api.nineteen.ai/v1"
+    config["MIN_STAKE_THRESHOLD"] = input("Enter MIN_STAKE_THRESHOLD (default: 500000): ") or default_stake_threshold
     config["MINER_TYPE"] = input("Enter MINER_TYPE [text, image] (default: text): ") or "text"
     config["REFRESH_NODES"] = "true"
     return config
