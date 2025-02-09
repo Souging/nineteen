@@ -41,7 +41,7 @@ async def capacity(
 
         # TO help dev by just returning 10% to all  validators
         if os.getenv("ENV", "prod").lower() == "dev":
-            capacities[task] = max_capacity * 0.1
+            capacities[task] = max_capacity * 0.5
         elif weight > 0:
             capacities[task] = max_capacity * validator_node.stake / total_stake
 
