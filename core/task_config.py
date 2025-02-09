@@ -38,7 +38,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             created=1733599299,
             description="Llama 3.2 3B is a finetune of [Llama 3.2 3B](/unsloth/llama-3.2-3b-instruct) with a \"HUGE step up dataset wise\" compared to Llama 3.1 8B. Sloppy chats output were purged.\n\nUsage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).",
             task_type=cmodels.TaskType.TEXT,
-            max_capacity=60_000,
+            max_capacity=6_000_000,
             orchestrator_server_config=cmodels.OrchestratorServerConfig(
                 server_needed=cmodels.ServerType.LLM,
                 load_model_config={
@@ -46,7 +46,6 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
                     "half_precision": True,
                     "tokenizer": "tau-vision/llama-tokenizer-fix",
                     "max_model_len": 20_000,
-                    "gpu_memory_utilization": 0.5,
                     "eos_token_id": 128009
                 },
                 endpoint=cmodels.Endpoints.chat_completions.value,
@@ -60,7 +59,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             volume_to_requests_conversion=250,
             is_stream=True,
             weight=0.025,
-            timeout=2,
+            timeout=10,
             enabled=True,
             architecture={
                 "modality": "text->text",
@@ -72,7 +71,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             display_name="Llama 3.2 3B Completions",
             description="Llama 3.2 3B is a finetune of [Llama 3.2 3B](/unsloth/llama-3.2-3b-instruct) with a \"HUGE step up dataset wise\" compared to Llama 3.1 8B. Sloppy chats output were purged.\n\nUsage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).",
             task_type=cmodels.TaskType.TEXT,
-            max_capacity=60_000,
+            max_capacity=6_000_000,
             orchestrator_server_config=cmodels.OrchestratorServerConfig(
                 server_needed=cmodels.ServerType.LLM,
                 load_model_config={
@@ -80,7 +79,6 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
                     "half_precision": True,
                     "tokenizer": "tau-vision/llama-tokenizer-fix",
                     "max_model_len": 20_000,
-                    "gpu_memory_utilization": 0.5,
                     "eos_token_id": 128009
                 },
                 endpoint=cmodels.Endpoints.completions.value,
@@ -94,7 +92,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             volume_to_requests_conversion=250,
             is_stream=True,
             weight=0.025,
-            timeout=2,
+            timeout=10,
             enabled=True,
             architecture={
                 "modality": "text->text",
@@ -106,7 +104,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             display_name="Llama 3.1 70B",
             description="Llama 3.1 70B is a finetune of [Llama 3.1 70B](/hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4) with a \"HUGE step up dataset wise\" compared to Llama 3.1 8B. Sloppy chats output were purged.\n\nUsage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).",
             task_type=cmodels.TaskType.TEXT,
-            max_capacity=60_000,
+            max_capacity=6_000_000,
             orchestrator_server_config=cmodels.OrchestratorServerConfig(
                 server_needed=cmodels.ServerType.LLM,
                 load_model_config={
@@ -114,7 +112,6 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
                     "half_precision": True,
                     "tokenizer": "tau-vision/llama-tokenizer-fix",
                     "max_model_len": 16_000,
-                    "gpu_memory_utilization": 0.57,
                     "eos_token_id": 128009
                 },
                 endpoint=cmodels.Endpoints.chat_completions.value,
@@ -128,7 +125,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             volume_to_requests_conversion=400,
             is_stream=True,
             weight=0.075,
-            timeout=2,
+            timeout=10,
             enabled=True,
             architecture={
                 "modality": "text->text",
@@ -140,7 +137,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             display_name="Llama 3.1 70B Completions",
             description="Llama 3.1 70B is a finetune of [Llama 3.1 70B](/hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4) with a \"HUGE step up dataset wise\" compared to Llama 3.1 8B. Sloppy chats output were purged.\n\nUsage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).",
             task_type=cmodels.TaskType.TEXT,
-            max_capacity=60_000,
+            max_capacity=6_000_000,
             orchestrator_server_config=cmodels.OrchestratorServerConfig(
                 server_needed=cmodels.ServerType.LLM,
                 load_model_config={
@@ -148,7 +145,6 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
                     "half_precision": True,
                     "tokenizer": "tau-vision/llama-tokenizer-fix",
                     "max_model_len": 16_000,
-                    "gpu_memory_utilization": 0.57,
                     "eos_token_id": 128009
                 },
                 endpoint=cmodels.Endpoints.completions.value,
@@ -162,7 +158,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             volume_to_requests_conversion=400,
             is_stream=True,
             weight=0.075,
-            timeout=2,
+            timeout=10,
             enabled=True,
             architecture={
                 "modality": "text->text",
@@ -174,7 +170,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             display_name="Llama 3.1 8B",
             description="Llama 3.1 8B is a finetune of [Llama 3.1 8B](/unsloth/Meta-Llama-3.1-8B-Instruct). Sloppy chats output were purged.\n\nUsage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).",
             task_type=cmodels.TaskType.TEXT,
-            max_capacity=60_000,
+            max_capacity=6_000_000,
             orchestrator_server_config=cmodels.OrchestratorServerConfig(
                 server_needed=cmodels.ServerType.LLM,
                 load_model_config={
@@ -182,7 +178,6 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
                     "half_precision": True,
                     "tokenizer": "tau-vision/llama-tokenizer-fix",
                     "max_model_len": 20_000,
-                    "gpu_memory_utilization": 0.5,
                     "eos_token_id": 128009
                 },
                 endpoint=cmodels.Endpoints.chat_completions.value,
@@ -196,7 +191,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             volume_to_requests_conversion=300,
             is_stream=True,
             weight=0.05,
-            timeout=2,
+            timeout=10,
             enabled=True,
             architecture={
                 "modality": "text->text",
@@ -208,7 +203,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             display_name="Llama 3.1 8B Completions",
             description="Llama 3.1 8B is a finetune of [Llama 3.1 8B](/unsloth/Meta-Llama-3.1-8B-Instruct). Sloppy chats output were purged.\n\nUsage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).",
             task_type=cmodels.TaskType.TEXT,
-            max_capacity=60_000,
+            max_capacity=6_000_000,
             orchestrator_server_config=cmodels.OrchestratorServerConfig(
                 server_needed=cmodels.ServerType.LLM,
                 load_model_config={
@@ -216,7 +211,6 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
                     "half_precision": True,
                     "tokenizer": "tau-vision/llama-tokenizer-fix",
                     "max_model_len": 20_000,
-                    "gpu_memory_utilization": 0.5,
                     "eos_token_id": 128009
                 },
                 endpoint=cmodels.Endpoints.completions.value,
@@ -230,7 +224,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             volume_to_requests_conversion=300,
             is_stream=True,
             weight=0.05,
-            timeout=2,
+            timeout=10,
             enabled=True,
             architecture={
                 "modality": "text->text",
@@ -242,7 +236,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             display_name="Deepseek R1 Qwen 32B",
             description="Deepseek R1 Qwen 32B is a distillation of [Deepseek R1](/deepseek-ai/DeepSeek-R1). Check out the latest license under [Deepseek R1 page](https://huggingface.co/deepseek-ai/DeepSeek-R1).",
             task_type=cmodels.TaskType.TEXT,
-            max_capacity=60_000,
+            max_capacity=6_000_000,
             orchestrator_server_config=cmodels.OrchestratorServerConfig(
                 server_needed=cmodels.ServerType.LLM,
                 load_model_config={
@@ -250,7 +244,6 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
                     "half_precision": True,
                     "tokenizer": "casperhansen/deepseek-r1-distill-qwen-32b-awq",
                     "max_model_len": 16_000,
-                    "gpu_memory_utilization": 0.57,
                     "eos_token_id": 151643
                 },
                 endpoint=cmodels.Endpoints.chat_completions.value,
@@ -264,7 +257,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             volume_to_requests_conversion=500,
             is_stream=True,
             weight=0.075,
-            timeout=2,
+            timeout=10,
             enabled=True,
             architecture={
                 "modality": "text->text",
@@ -276,7 +269,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             display_name="Deepseek R1 Qwen 32B Completions",
             description="Deepseek R1 Qwen 32B is a distillation of [Deepseek R1](/deepseek-ai/DeepSeek-R1). Check out the latest license under [Deepseek R1 page](https://huggingface.co/deepseek-ai/DeepSeek-R1).",
             task_type=cmodels.TaskType.TEXT,
-            max_capacity=60_000,
+            max_capacity=6_000_000,
             orchestrator_server_config=cmodels.OrchestratorServerConfig(
                 server_needed=cmodels.ServerType.LLM,
                 load_model_config={
@@ -284,7 +277,6 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
                     "half_precision": True,
                     "tokenizer": "casperhansen/deepseek-r1-distill-qwen-32b-awq",
                     "max_model_len": 16_000,
-                    "gpu_memory_utilization": 0.57,
                     "eos_token_id": 151643
                 },
                 endpoint=cmodels.Endpoints.completions.value,
@@ -298,7 +290,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             volume_to_requests_conversion=500,
             is_stream=True,
             weight=0.075,
-            timeout=2,
+            timeout=10,
             enabled=True,
             architecture={
                 "modality": "text->text",
@@ -310,15 +302,14 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             display_name="Rogue Rose 103B",
             description="Rogue Rose 103B makes roleplay go brr",
             task_type=cmodels.TaskType.TEXT,
-            max_capacity=60_000,
+            max_capacity=6_000_000,
             orchestrator_server_config=cmodels.OrchestratorServerConfig(
                 server_needed=cmodels.ServerType.LLM,
                 load_model_config={
                     "model": "TheBloke/Rogue-Rose-103b-v0.2-AWQ",
                     "tokenizer": "TheBloke/Rogue-Rose-103b-v0.2-AWQ",
                     "half_precision": True,
-                    "max_model_len": 4096,
-                    "gpu_memory_utilization": 0.8,
+                    "max_model_len": 8192,
                     "eos_token_id": 2,
                 },
                 endpoint=cmodels.Endpoints.completions.value,
@@ -330,7 +321,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             volume_to_requests_conversion=600,
             is_stream=True,
             weight=0.075,
-            timeout=2,
+            timeout=10,
             enabled=True,
             architecture={
                 "modality": "text->text",
@@ -383,7 +374,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             volume_to_requests_conversion=10,
             is_stream=False,
             weight=0.05,
-            timeout=20,
+            timeout=100,
             enabled=True,
             model_info={"model": "dataautogpt3/ProteusV0.4-Lightning", cst.MIN_STEPS: 6, cst.MAX_STEPS: 12},
         ),
@@ -408,7 +399,7 @@ def task_configs_factory() -> dict[str, cmodels.FullTaskConfig]:
             volume_to_requests_conversion=10,
             is_stream=False,
             weight=0.10,
-            timeout=20,
+            timeout=100,
             enabled=True,
             model_info={"model": "black-forest-labs/FLUX.1-schnell", cst.MIN_STEPS: 2, cst.MAX_STEPS: 20},
         ),
